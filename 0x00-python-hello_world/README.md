@@ -6,3 +6,5 @@ gp: A shell script to automate adding, commiting, and pushing files to the remot
 1-run_inline: Runs a chunk of python code inline via an env variable
 
 2-print.py: Prints a simple message in python
+
+3-print_number.py: Prints a number
