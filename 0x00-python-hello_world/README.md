@@ -10,3 +10,7 @@ gp: A shell script to automate adding, commiting, and pushing files to the remot
 3-print_number.py: Prints a number
 
 4-print_float.py: Prints pi to 2 decimal places
+
+5-print_string.py: Prints a string
+
+6-concat.py: Concatenates strings
