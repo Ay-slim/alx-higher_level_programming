@@ -29,7 +29,7 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *new;
 	listint_t *next_chk;
 
-	if (number <= current->n)
+	if (!current || number <= current->n)
 	{
 		new = create_node(number, current);
 		if (new == NULL)
@@ -43,15 +43,7 @@ listint_t *insert_node(listint_t **head, int number)
 		if (number >= current->n)
 		{
 			next_chk = current->next;
-			if (next_chk == NULL)
-			{
-				new = create_node(number, NULL);
-				if (new == NULL)
-					return (NULL);
-				current->next = new;
-				return (new);
-			}
-			if (number <= next_chk->n)
+			if (!next_chk || number <= next_chk->n)
 			{
 				new = create_node(number, current->next);
 				if (new == NULL)
