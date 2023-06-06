@@ -3,7 +3,8 @@ import random
 number = random.randint(-10000, 10000)
 print_val = "Last digit of {} is {} and is "
 last_digit = 0
-sign = number / abs(number)
+if number != 0:
+    sign = number / abs(number)
 if number > 9 or number < -9:
     last_digit = ((number * sign) % 10) * sign
 else:
