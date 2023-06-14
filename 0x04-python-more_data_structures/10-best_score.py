@@ -4,7 +4,9 @@ def best_score(a_dictionary):
         return None
     starter = 0
     for i in list(a_dictionary):
-        if a_dictionary[i] >= starter:
+        if a_dictionary[i] is None:
+            return None
+        if a_dictionary[i] > starter:
             starter = a_dictionary[i]
             max_key = i
     return max_key
