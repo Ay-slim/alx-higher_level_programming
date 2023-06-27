@@ -10,7 +10,7 @@ class Square:
         Args:
             size(int): New square size
         """
-        self.size = size
+        self.__size = size
     
     def size(self):
         """Return size private attribrute"""
