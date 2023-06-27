@@ -5,7 +5,6 @@
 class Square:
     """A template for square objets"""
 
-
     def __init__(self, self_size):
         """Initialize a square instance
         Args:
