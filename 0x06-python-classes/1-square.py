@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Module to define a square class with initialization"""
+
+
 class Square:
     """A template for square objets"""
 
