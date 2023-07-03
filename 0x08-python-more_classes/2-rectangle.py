@@ -19,8 +19,8 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if height < 0:
             raise ValueError("height must be >= 0")
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     def width(self):
         """Function to return the width of a rectangle"""
