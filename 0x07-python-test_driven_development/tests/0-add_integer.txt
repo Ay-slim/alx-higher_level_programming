@@ -1,0 +1,24 @@
+Text file to test the 0-add module
+>>> add_func = __import__('0-add_integer')
+>>> add_func.add_integer(2, 5)
+7
+>>> add_func.add_integer(2, 3.1)
+5
+>>> add_func.add_integer(1.1, 3)
+4
+>>> add_func.add_integer(2.4, 4.6)
+6
+>>> add_func.add_integer(3, 'b')
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_func.add_integer('a', 2.0)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_func.add_integer(2)
+100
+>>> add_func.add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
