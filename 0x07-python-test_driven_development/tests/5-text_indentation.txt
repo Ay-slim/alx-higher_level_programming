@@ -1,0 +1,10 @@
+Text file to test the 0-add module
+>>> text_ind = __import__('5-text_indentation')
+>>> text_ind.text_indentation(2)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> text_ind.text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
