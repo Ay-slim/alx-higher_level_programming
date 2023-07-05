@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for matrix divided function"""
 
+
 def matrix_divided(matrix, div):
     """Matrix division"""
     matrix_error = "matrix must be a matrix (list of lists) of integers/floats"
