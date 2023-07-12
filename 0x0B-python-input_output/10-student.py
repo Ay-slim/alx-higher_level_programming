@@ -24,12 +24,14 @@ class Student:
                 if type(i) is not str:
                     all_string = False
 
-        if type(attrs) is not list or len(attrs) < 1 or all_string is False:
+        if type(attrs) is not list or all_string is False:
             return self.__dict__
 
         self_dict = self.__dict__
         ret_dict = {}
-        for j in attrs:
-            if j in self_dict:
-                ret_dict[j] = self_dict[j]
+
+        if len(attrs) > 0:
+            for j in attrs:
+                if j in self_dict:
+                    ret_dict[j] = self_dict[j]
         return ret_dict
