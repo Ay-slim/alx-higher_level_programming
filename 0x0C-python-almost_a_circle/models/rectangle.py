@@ -29,6 +29,12 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    @property
+    def width(self):
+        """Getter method to get width private variable"""
+        return self.__width
+
+    @width.setter
     def width(self, value):
         """Setter method to set width private attribute"""
         if type(value) != int:
@@ -37,10 +43,12 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         self.__width = value
 
-    def width(self):
-        """Getter method to get width private variable"""
-        return self.__width
+    @property
+    def height(self):
+        """Getter method to get height private variable"""
+        return self.__height
 
+    @height.setter
     def height(self, value):
         """Setter method to set height private attribute"""
         if type(value) != int:
@@ -49,10 +57,12 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = value
 
-    def height(self):
-        """Getter method to get height private variable"""
-        return self.__height
+    @property
+    def x(self):
+        """Getter method to get x private variable"""
+        return self.__x
 
+    @x.setter
     def x(self, value):
         """Setter method to set x private attribute"""
         if type(value) != int:
@@ -61,10 +71,12 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = value
 
-    def x(self):
-        """Getter method to get x private variable"""
-        return self.__x
+    @property
+    def y(self):
+        """Getter method to get y private variable"""
+        return self.__y
 
+    @y.setter
     def y(self, value):
         """Setter method to set y private attribute"""
         if type(value) != int:
@@ -72,10 +84,6 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
-    def y(self):
-        """Getter method to get y private variable"""
-        return self.__y
 
     def area(self):
         """Public method that returns the area of a rectangle class instance"""
