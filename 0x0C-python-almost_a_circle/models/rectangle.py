@@ -83,8 +83,17 @@ class Rectangle(Base):
 
     def display(self):
         """Public method to draw out the rectangle using the character #"""
-        for j in range(self.height):
-            print('#' * self.width)
+        if not self.width > 0 or not self.height > 0:
+            print("")
+            return
+
+        for j in range(self.y):
+            print("")
+        for i in range(self.height):
+            for k in range(self.x):
+                print(" ", end="")
+            print('#' * self.width, end="")
+            print("")
 
     def __str__(self):
         """Overriding the __str__ method to control the output when printing"""
