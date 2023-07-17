@@ -115,3 +115,13 @@ class Rectangle(Base):
         elif kwargs and len(kwargs) > 0:
             for key, val in kwargs.items():
                 setattr(self, key, val)
+
+    def to_dictionary(self):
+        """Function to return a rectangle object instance as dict"""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
