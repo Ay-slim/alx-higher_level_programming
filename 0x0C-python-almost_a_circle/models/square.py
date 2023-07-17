@@ -35,7 +35,28 @@ class Square(Rectangle):
         attrs = ['id', 'size', 'x', 'y']
         if args and args_len > 0:
             for i in range(args_len):
-                setattr(self, attrs[i], args[i])
+                if i == 0:
+                    if attrs[i] is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = args[i]
+                else:
+                    setattr(self, attrs[i], args[i])
         elif kwargs and len(kwargs) > 0:
             for key, val in kwargs.items():
-                setattr(self, key, val)
+                if key == 'id':
+                    if val is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = val
+                else:
+                    setattr(self, key, val)
+
+    def to_dictionary(self):
+        """Function to return a square object instance as dict"""
+        return {
+            "id": self.id,
+            "size": self.width,
+            "x": self.x,
+            "y": self.y
+        }

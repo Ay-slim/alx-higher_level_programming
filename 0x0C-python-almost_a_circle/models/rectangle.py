@@ -111,10 +111,30 @@ class Rectangle(Base):
         attrs = ['id', 'width', 'height', 'x', 'y']
         if args and args_len > 0:
             for i in range(args_len):
-                setattr(self, attrs[i], args[i])
+                if i == 0:
+                    if attrs[i] is None:
+                        w = self.width
+                        h = self.height
+                        x = self.x
+                        y = self.y
+                        self.__init__(w, h, x, y)
+                    else:
+                        self.id = attrs[i]
+                else:
+                    setattr(self, attrs[i], args[i])
         elif kwargs and len(kwargs) > 0:
             for key, val in kwargs.items():
-                setattr(self, key, val)
+                if key == 'id':
+                    if val is None:
+                        w = self.width
+                        h = self.height
+                        x = self.x
+                        y = self.y
+                        self.__init__(w, h, x, y)
+                    else:
+                        self.id = val
+                else:
+                    setattr(self, key, val)
 
     def to_dictionary(self):
         """Function to return a rectangle object instance as dict"""
