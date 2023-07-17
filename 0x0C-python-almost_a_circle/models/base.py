@@ -18,3 +18,12 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
+
+    def integer_validator(self, name, value):
+        """Validate that input values are integers and greater than 0"""
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if name in ['height', 'width'] and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
+        if name in ['x', 'y'] and value < 0:
+            raise ValueError("{} must be >= 0".format(name))
