@@ -65,3 +65,17 @@ class Base:
                 obj = cls(1)
             obj.update(**dictionary)
             return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of classes created
+        from a file arg containig JSON strs
+        """
+        f_n = str(cls.__name__ + ".json")
+        try:
+            with open(f_n, "r") as outfile:
+                dicts_arr = Base.from_json_string(outfile.read())
+                return [cls.create(**k) for k in dicts_arr]
+        except IOError:
+            return []
