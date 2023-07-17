@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for Base class initialization"""
 import json
+import csv
 
 
 class Base:
@@ -34,3 +35,17 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
+
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Converts a list of objects to a csv file"""
+        f_n = cls.__name__ + ".json"
+        with open(f_n, "w") as outfile:
+            if list_objs is None:
+                outfile.write("[]")
+            else:
+                dicts_arr = []
+                for i in list_objs:
+                    dicts_arr.append(i.to_dictionary())
+                outfile.write(Base.to_json_string(dicts_arr))
