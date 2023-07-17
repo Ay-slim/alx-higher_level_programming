@@ -36,7 +36,6 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
-
     @classmethod
     def save_to_file(cls, list_objs):
         """Converts a list of objects to a csv file"""
@@ -49,3 +48,9 @@ class Base:
                 for i in list_objs:
                     dicts_arr.append(i.to_dictionary())
                 outfile.write(Base.to_json_string(dicts_arr))
+
+    def from_json_string(json_string):
+        """Returns the JSON representation of a string of dicts list"""
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
