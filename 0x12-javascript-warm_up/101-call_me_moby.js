@@ -1,7 +1,7 @@
 #!/usr/bin/node
-const callMeMoby = (a, func) => {
-  for (let j = 0; j < parseInt(a); j++) {
-    func();
+const callMeMoby = (x, theFunction) => {
+  for (let j = 0; j < parseInt(x); j++) {
+    theFunction();
   }
 }
 exports.callMeMoby = callMeMoby;
