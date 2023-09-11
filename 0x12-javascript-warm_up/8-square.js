@@ -1,11 +1,9 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
-
-if (argv.length < 2 || !parseInt(argv[2])) {
+if (process.argv.length < 2 || !parseInt(process.argv[2])) {
   console.log('Missing size');
 } else {
   let strVal = '';
-  const size = parseInt(argv[2]);
+  const size = parseInt(process.argv[2]);
   for (let i = 0; i < size; i++) {
     strVal += 'X';
   }
