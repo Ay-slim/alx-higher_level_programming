@@ -1,8 +1,6 @@
 #!/usr/bin/node
-if (!tracker) {
-  var tracker = 0;
-}
+const itemsList = [];
 exports.logMe = function (item) {
-  console.log(`${tracker}: ${item}`);
-  tracker++;
+  console.log(`${itemsList.length}: ${item}`);
+  itemsList.push(item);
 };
