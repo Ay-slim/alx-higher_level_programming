@@ -12,9 +12,8 @@ if __name__ == "__main__":
                 sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    query = session.query(State).order_by(State.id).filter_by(id=1)
-    instances = query.all()
-    if not len(instances):
+    instance = session.query(State).order_by(State.id).first()
+    if instance is None:
         print('Nothing')
     else:
-        print('{}: {}'.format(instances[0].id, instances[0].name))
+        print('{}: {}'.format(instance.id, instance.name))
