@@ -9,7 +9,6 @@ import sys
 if __name__ == "__main__":
     headers = {
         "Accept": "application/vnd.github+json",
-        "Authorization": "Bearer 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",
         "X-GitHub-Api-Version": "2022-11-28"
     }
     url = 'https://api.github.com/repos/{}/{}/commits?per_page=10'.format(
