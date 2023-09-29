@@ -15,10 +15,8 @@ if __name__ == "__main__":
     r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
         j = r.json()
-        print(j, 'JJJJ')
         if len(j.keys()):
-            for key, val in j.items():
-                print('[{}] {}'.format(key, val))
+            print('[{}] {}'.format(j.id, j.name))
         else:
             print('No result')
     except ValueError as e:
