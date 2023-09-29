@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module for a script that fetches 
+Module for a script that fetches github user id
 """
 
 import requests
