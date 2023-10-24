@@ -10,6 +10,6 @@ if __name__ == "__main__":
             'https://alx-intranet.hbtn.io/status') as response:
         response_read = response.read()
         print('Body response:')
-        print('\t- type: {}'.format(type(response.read())))
+        print('\t- type: {}'.format(type(response_read)))
         print('\t- content: {}'.format(response_read))
         print('\t- utf8 content: {}'.format(response.__dict__['msg']))
