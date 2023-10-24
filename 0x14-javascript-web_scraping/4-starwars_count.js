@@ -3,7 +3,8 @@ const process = require('process');
 const request = require('request');
 
 const filmUrl = process.argv[2];
-const charLink = `https://swapi-api.alx-tools.com/api/people/${18}/`;
+const targetId = 18;
+const charLink = `https://swapi-api.alx-tools.com/api/people/${targetId}/`;
 request(filmUrl, (err, res, body) => {
   if (err) {
     console.log(err);
