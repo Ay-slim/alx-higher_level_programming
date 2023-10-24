@@ -15,16 +15,15 @@ request(fUrl, (err, res, body) => {
   } else {
     const parsedJson = JSON.parse(body);
     const charIds = parsedJson.characters.map(idExtractor);
-    request(pUrl, (err, res, pBody) => {
-      if (err) {
-        console.log(err);
-      }
-      const parsedPeople = JSON.parse(pBody);
-      parsedPeople.results.forEach(person => {
-        if (charIds.includes(idExtractor(person.url))) {
-          console.log(person.name);
+    for (const j of charIds) {
+      request(`${pUrl}${j}/`, (err, res, pBody) => {
+        if (err) {
+          console.log(err);
         }
+        const parsedPerson = JSON.parse(pBody);
+        console.log(parsedPerson.name);
       });
-    });
+    }
   }
-});
+}
+);
