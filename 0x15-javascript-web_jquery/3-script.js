@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const $ = window.$;
-const redSelector = '#red_header';
+const redSelector = 'DIV#red_header';
 $(redSelector).click(function () {
   $(redSelector).addClass('red');
 });
